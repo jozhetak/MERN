@@ -49,4 +49,6 @@ export const logOutUser = () => dispatch => {
     setAuthToken(false);
 
     dispatch(setCurrentUser({}));
+
+    window.location.href = '/login';
 }
