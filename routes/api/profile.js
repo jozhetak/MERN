@@ -7,6 +7,7 @@ const User = require('../../models/User');
 const validateProfileInput = require('../../validation/profile');
 const validateExperienceInput = require('../../validation/experience');
 const validateEducationInput = require('../../validation/education');
+
 // @route GET api/profile
 // @desc get current users profile
 // @access private
@@ -98,6 +99,7 @@ router.post('/',
         if (!isValid) {
             return res.status(400).json(errors);
         }
+
         //Get fieds
         const profileFields = {};
         profileFields.user = req.user._id;
