@@ -5,6 +5,7 @@ import  PropTypes from 'prop-types';
 import PostItem from '../posts/PostItem';
 import Spinner from '../common/Spinner';
 import { getPost } from '../../actions/postActions';
+import CommentForm from './CommentForm';
 
 
 class Post extends Component {
@@ -19,7 +20,11 @@ class Post extends Component {
         if (post === null || loading || Object.keys(post).length === 0) {
             postContent = <Spinner />;
         } else {
-            postContent = ( <div><PostItem post={post} showActions={false}/></div> )
+            postContent = (
+                <div>
+                    <PostItem post={post} showActions={false}/>
+                    <CommentForm postId={post._id}/>
+                </div> )
         }
 
         return (

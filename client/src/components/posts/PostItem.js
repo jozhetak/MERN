@@ -55,7 +55,7 @@ class PostItem extends Component {
                             <button onClick={this.onUnlikeClick.bind(this, post._id)} type="button" className="btn btn-light mr-1">
                                 <i className="text-secondary fas fa-thumbs-down"></i>
                             </button>
-                            <Link to={`/posts/${post._id}`} className="btn btn-info mr-1">Comments</Link>
+                            <Link to={`/post/${post._id}`} className="btn btn-info mr-1">Comments</Link>
                             {post.user === auth.user.id ? (
                             <button onClick={this.onDeleteClick.bind(this, post._id)}
                                     type="button"
