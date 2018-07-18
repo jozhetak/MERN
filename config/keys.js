@@ -1,5 +1,5 @@
-module.exports = {
-    // mongoURI: "mongodb://laurent:tokisama1@ds163730.mlab.com:63730/traversy",
-    mongoURI: "mongodb://laurent:tokisama@localhost:27017/traversymern",
-    secretOrKey: 'secret'
-};
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./keys_prod');
+} else {
+    module.exports = require('./keys_dev');
+}
